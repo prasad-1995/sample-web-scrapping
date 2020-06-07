@@ -5,8 +5,8 @@ import mysql.connector
 
 
 def scrap(value):    
-    global a 
-    a = value
+    global g_loop 
+    g_loop = value
     url = "https://websites.co.in/sitemap"
 
     r = requests.get(url)
@@ -37,7 +37,7 @@ def scrap(value):
         title_data.append(title.string)
 
         count = count + 1
-        if count == a:
+        if count == g_loop:
             break
     return title_data,link
 
@@ -53,11 +53,11 @@ def show(value):
         print("Link : ",c)
         print("")
         count = count + 1
-        if count == a:
+        if count == g_loop:
             break
 
 def creat_database():
-    loop = a
+    loop = g_loop
     title_data,link = scrap(value=None)
     user = input("enter user name : ")
     password = input("enter password : ")
