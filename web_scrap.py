@@ -126,15 +126,17 @@ def creat_database():
 
 
 
-ans = input('for scrapping website automatically press "YES" else press no : ')
+ans = input('for scrapping website automatically press "YES" or for manually press "NO" : ')
 
 if ans == "yes" or ans == "YES" or ans == 'y':
     scrap(10) 
     show(10)
 
     db = input("to do database related operation type yes : ")
-    if db == "yes":
+    if db == "yes" or db == "YES" or db == "y":
         creat_database()
+    else:
+        print("thank you")
 
 elif ans=="no" or ans == "NO" or ans == "n":
     print("")
@@ -146,5 +148,7 @@ elif ans=="no" or ans == "NO" or ans == "n":
         show(no)
     
     db = input("to do database related operation type yes : ")
-    if db == "yes":
+    if db == "yes" or db == "YES" or db == "y":
         creat_database()
+    else:
+        print("Thank you")
